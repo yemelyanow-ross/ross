@@ -9,11 +9,10 @@ preview: repaint (или restyle) -  изменение тех стилей эл
 	- Манипуляции с окном браузера — изменения размеров, прокрутка;
 	- Активация псевдо-классов (например, :hover).
 title: Reflow & repaint
-tags: reflow, repaint, scroll, -----post-locked-by:yemelyanow-ross
+tags: reflow, repaint, scroll
 author: yemelyanow-ross
 date: 2017-10-24 06:48:00
 ---
-
 Браузеры по возможности локализуют repaint и reflow в пределах элементов, подвергнувшимися изменению. Например, изменение размеров абсолютно или фиксировано спозиционированного элемента затронет только сам элемент и его потомков, в то время как изменение статично спозиционированного — повлечет reflow всех элементов, следующих за ним.
 Ещё одна особенность — во время выполнения JavaScript браузеры кэшируют вносимые изменения, и применяют их в один проход по завершению работы блока кода, т.е. стараются делать как можно меньше reflow и repaint.
 
@@ -22,34 +21,24 @@ date: 2017-10-24 06:48:00
 [pointer-events](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)  - 
 
 ```
-.disable-hover {
-  pointer-events: none;
-}
-```
-
-```
 var body = document.body,
-    timer;
+    timer,
+    hover_disabled = false;
 
 window.addEventListener('scroll', function() {
   clearTimeout(timer);
-  if(!body.classList.contains('disable-hover')) {
-    body.classList.add('disable-hover')
+  if( ! hover_disabled && ! body.classList.contains('disable-hover')) {
+    body.classList.add('disable-hover');
+    hover_disabled = true;
   }
   
   timer = setTimeout(function(){
-    body.classList.remove('disable-hover')
-  },500);
+    body.classList.remove('disable-hover');
+    hover_disabled = false;
+  }, 500);
 }, false);
 ```
 Вешаем обработчик на событие скрола, в котором сперва сбрасываем предыдущий таймер, проверяем наличие класса на нашем body, и, если его нет – добавляем. Затем просто добавляем новый таймер, который, через пол секунды после окончания скрола, сбросит наш класс.
-Если где-то в странице будут элементы со стилем pointer-events: auto, они перетрут глобальный класс, и будут все еще тормозить., в этом случае:
-```
-.disable-hover,
-.disable-hover * {
-  pointer-events: none !important;
-}
-```
 
 
 **Практические советы по оптимизации:**
