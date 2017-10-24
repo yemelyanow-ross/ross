@@ -9,7 +9,7 @@ preview: repaint (или restyle) -  изменение тех стилей эл
 	- Манипуляции с окном браузера — изменения размеров, прокрутка;
 	- Активация псевдо-классов (например, :hover).
 title: Reflow & repaint
-tags: reflow, repaint, scroll, -----post-locked-by:yemelyanow-ross
+tags: reflow, repaint, scroll
 author: yemelyanow-ross
 date: 2017-10-24 06:48:00
 ---
@@ -19,6 +19,12 @@ date: 2017-10-24 06:48:00
 *Отключение  :hover анимации во время скроллинга:*
 
 [pointer-events](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)  - 
+
+```
+.disable-hover {
+  pointer-events: none;
+}
+```
 
 ```
 var body = document.body,
