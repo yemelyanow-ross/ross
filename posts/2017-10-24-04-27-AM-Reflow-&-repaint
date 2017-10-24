@@ -9,7 +9,7 @@ preview: repaint (или restyle) -  изменение тех стилей эл
 	- Манипуляции с окном браузера — изменения размеров, прокрутка;
 	- Активация псевдо-классов (например, :hover).
 title: Reflow & repaint
-tags: reflow, repaint, scroll
+tags: reflow, repaint, scroll, -----post-locked-by:yemelyanow-ross
 author: yemelyanow-ross
 date: 2017-10-24 06:48:00
 ---
