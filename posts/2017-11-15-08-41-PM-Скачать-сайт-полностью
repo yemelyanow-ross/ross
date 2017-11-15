@@ -1,0 +1,8 @@
+---
+preview: wget  -np -r -l5 -k -p http://.......
+title: Скачать сайт полностью
+tags: HTML, CSS
+author: yemelyanow-ross
+date: 17-11-15 22:39
+---
+http://www.goubuntu.ru/kak-skachat-sajt-celikom-v-ubuntu/
