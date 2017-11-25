@@ -9,13 +9,17 @@ preview: Данные в формате представляют собой:
    * null
    
 title: JSON
-tags: js, json, , -----post-locked-by:yemelyanow-ross
+tags: js, json, 
 author: yemelyanow-ross
 date: 2017-11-25 21:32:00
 ---
 Методы: 
 
-**JSON.parse(str)**  - переводит строку с данными в формате JSON в JavaScript-объект/массив/значение
+**JSON.parse(str)**  - переводит строку с данными в формате JSON в JavaScript-объект/массив/значение, при этом возможно преобразовывая её.
+		- Возвращает объект Object, соответствующий переданной строке JSON text.
+		- Выбрасывает исключение SyntaxError, если разбираемая строка не является 
+				правильным JSON.
+
 ```
 let numbers = "[0, 1, 2, 3]";
 
