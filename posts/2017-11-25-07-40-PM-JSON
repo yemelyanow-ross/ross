@@ -8,12 +8,12 @@ preview: Данные в формате представляют собой:
 	 * логическое значение true/false,
    * null
    
-
 title: JSON
-tags: js, json, 
+tags: js, json, , -----post-locked-by:yemelyanow-ross
 author: yemelyanow-ross
-date: 17-11-25 21:32
+date: 2017-11-25 21:32:00
 ---
+
 Методы: 
 
 JSON.parse(str)  - переводит строку с данными в формате JSON в JavaScript-объект/массив/значение
