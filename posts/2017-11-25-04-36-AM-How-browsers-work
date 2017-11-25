@@ -8,7 +8,7 @@ preview: Основные компоненты браузера (1.1).
 6. **Интерпретатор JavaScript (JavaScript interpreter)** – используется для синтаксического анализа и выполнения кода JavaScript.
 7. **Хранилище данных (Data storage)** – необходимо для сохраняемости процессов. Браузер сохраняет на жесткий диск данные различных типов, например файлы cookie. В новой спецификации HTML (HTML5) имеется определение термина "веб-база данных": это полноценная (хотя и облегченная) браузерная база данных.
 title: How-browsers-work
-tags: browser, dom tree, render tree, -----post-locked-by:yemelyanow-ross
+tags: browser, dom tree, render tree
 author: yemelyanow-ross
 date: 2017-11-25 06:32:00
 ---
@@ -26,4 +26,11 @@ date: 2017-11-25 06:32:00
 
 Важно понимать, что это последовательный процесс. Для удобства пользователя модуль отображения старается вывести содержание на экран как можно скорее, поэтому создание дерева отображения и компоновка могут начаться еще до завершения синтаксического анализа кода HTML. Одни части документа анализируются и выводятся на экран, в то время как другие только передаются по сети.
 
-![](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/webkitflow.png)
+                                     ![](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/webkitflow.png)
+                                                                         Рисунок . Схема работы модуля отображения WebKit.
+																																				 
+																																				 
+																    ![](https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/image008.jpg)
+																		                                    Рисунок . Схема работы модуля отображения Mozilla Gecko
+																																				
+В WebKit используется дерево отображения (render tree), состоящие из объектов отображения (render objects). Размещение элементов в WebKit называется компоновкой, или версткой (layout). Объединение узлов DOM и визуальных атрибутов для создания дерева отображения называется в WebKit совмещением (attachment).
