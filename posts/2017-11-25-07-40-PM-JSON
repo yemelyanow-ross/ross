@@ -1,0 +1,36 @@
+---
+preview: Данные в формате представляют собой:
+* JavaScript-объекты { ... }  или
+* Массивы [ ... ]  или
+* Значения одного из типов:
+   * строки в двойных кавычках,
+	 * число,
+	 * логическое значение true/false,
+   * null
+   
+
+title: JSON
+tags: js, json, 
+author: yemelyanow-ross
+date: 17-11-25 21:32
+---
+Методы: 
+
+JSON.parse(str)  - переводит строку с данными в формате JSON в JavaScript-объект/массив/значение
+```
+let numbers = "[0, 1, 2, 3]";
+
+numbers = JSON.parse(numbers);
+
+alert( numbers[1] ); // 1
+```
+
+```
+var user = '{ "name": "Вася", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }';
+
+user = JSON.parse(user);
+
+alert( user.friends[1] ); // 1
+```
+
+JSON.parse(str, reviver) -
