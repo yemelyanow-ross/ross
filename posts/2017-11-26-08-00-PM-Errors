@@ -1,12 +1,11 @@
 ---
 preview: Конструкция *try...catch* помечает блок инструкций как try, и в зависимости от того, произошла ошибка или нет, вызывает дополнительный блок инструкций catch.
-
-
 title: Errors
-tags: js, error, try...catch
+tags: js, error, try...catch, -----post-locked-by:yemelyanow-ross
 author: yemelyanow-ross
-date: 17-11-26 20:05
+date: 2017-11-26 20:05:00
 ---
+
 ```
 class MyError extends Error {
   constructor(message) {
