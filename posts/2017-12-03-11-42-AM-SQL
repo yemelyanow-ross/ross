@@ -1,12 +1,11 @@
 ---
 preview: Для того, чтобы создать таблицу в SQL, используется выражение CREATE TABLE. Оно принимает в качестве параметров все колонки, которые мы хотим внести, а также их типы данных.
-
-
 title: SQL
-tags: sql
+tags: sql, -----post-locked-by:yemelyanow-ross
 author: yemelyanow-ross
-date: 17-12-03 13:35
+date: 2017-12-03 13:35:00
 ---
+
 Напр.
 ```
 CREATE TABLE months (id int, name varchar(10), days int);
