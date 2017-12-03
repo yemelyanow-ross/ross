@@ -1,16 +1,33 @@
 ---
 preview: Для того, чтобы создать таблицу в SQL, используется выражение CREATE TABLE. Оно принимает в качестве параметров все колонки, которые мы хотим внести, а также их типы данных.
 title: SQL
-tags: sql, -----post-locked-by:yemelyanow-ross
+tags: sql
 author: yemelyanow-ross
 date: 2017-12-03 13:35:00
 ---
-
 Напр.
 ```
-CREATE TABLE months (id int, name varchar(10), days int);
+CREATE TABLE months (
+id int,
+name varchar(10), 
+days int,
+PRIMARY KEY (name)
+);
 ```
 
 где months - название таблицы, id, name, days - колонки таблицы.
 int - целочисленный тип
 varchar(10) - строка с максимальной длиной 10 символов
+PRIMARY KEY () - колонка значения в которой уникальны (обычно id, но можно и другое)
+
+добавление данных с помощью комманды INSERT:
+```
+INSERT INTO months (id,name,days) VALUES (2,'February',29);
+```
+В случае, если мы не укажем одну из колонок, на её место будет записано NULL или заданное значение по умолчанию
+
+Что-бы покзать данные в таблице используется SELECT:
+```
+SELECT  *  FROM characters
+```
+Результатом данного запроса будет таблица со всеми данными в таблице characters. Знак звёздочки (\*) означает то, что мы хотим показать все столбцы из таблицы без исключений.
