@@ -1,7 +1,7 @@
 ---
 preview: Для того, чтобы создать таблицу в SQL, используется выражение CREATE TABLE. Оно принимает в качестве параметров все колонки, которые мы хотим внести, а также их типы данных.
 title: SQL
-tags: sql, -----post-locked-by:yemelyanow-ross
+tags: sql
 author: yemelyanow-ross
 date: 2017-12-03 13:35:00
 ---
@@ -62,4 +62,66 @@ LIKE — ищет по шаблону
 SELECT * FROM albums WHERE genre IN ('pop','soul');// ищет в жанрах поп и соул
 SELECT * FROM albums WHERE released BETWEEN 1975 AND 1985;// ищет между 75 и 85
 SELECT * FROM albums WHERE album LIKE '%R%';// в названии есть буква R
+```
+% - любая последовательность символов (в т.ч. 0). Если начинается с R то - R%
+
+Так-же можно для любого логического выражения использовать инверсию (NOT),  напр: NOT BETWEEN
+
+**ФУНКЦИИ**
+COUNT() - возвращает число строк
+SUM() -  возвращает сумму всех полей с числовыми значениями в них
+AVG() - возвращает среднее значение среди строк
+MIN()/MAX() - возвращает минимальное/максимальное значение среди строк
+
+```
+SELECT MAX(released) FROM albums;
+```
+
+Вложенные SELECTы:
+```
+SELECT artist,album,released 
+FROM albums 
+WHERE released = (
+ SELECT MIN(released) FROM albums
+);
+```
+
+Что-бы вывести информацию из связанных таблиц надо их подключить например с помощью INNER JOIN   ...  ON:
+```
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON
+Orders.CustomerID=Customers.CustomerID;
+```
+
+Псевдонимы:
+Что-бы сделать название столбца понятнее можно назначить ему псевдоним - AS:
+```
+SELECT games.name, games.genre, devs.name AS developer, devs.country 
+FROM video_games AS games 
+INNER JOIN game_developers AS devs 
+ON games.developer_id = devs.id;
+```
+
+Что-бы изменить данные в таблице используется параметр UPDATE
+```
+UPDATE tv_series // название таблицы в которой надо поменять значение
+SET genre = 'drama' // значение которое надо поменять
+WHERE name = 'Game of Thrones'; //строка, которую надо поменять
+```
+
+Что-бы удалить *некоторые* данные из таблицы используют DELETE:
+```
+DELETE FROM tv_series //откуда удалить
+WHERE id = 4; //что удалить
+```
+
+Что-бы удалить *все* данные но оставить саму таблицу используют TRUNCATE:
+```
+TRUNCATE TABLE table_name;
+```
+
+Для удаления *всей таблицы* используют DROP:
+```
+DROP TABLE table_name;
 ```
