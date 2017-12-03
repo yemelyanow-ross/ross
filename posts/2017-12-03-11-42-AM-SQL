@@ -1,7 +1,7 @@
 ---
 preview: Для того, чтобы создать таблицу в SQL, используется выражение CREATE TABLE. Оно принимает в качестве параметров все колонки, которые мы хотим внести, а также их типы данных.
 title: SQL
-tags: sql, -----post-locked-by:yemelyanow-ross
+tags: sql
 author: yemelyanow-ross
 date: 2017-12-03 13:35:00
 ---
@@ -95,7 +95,7 @@ Orders.CustomerID=Customers.CustomerID;
 ```
 
 Псевдонимы:
-Что-бы сделать название столбца понятнее можно назначить ему псевдоним - AS:
+Что-бы сделать название столбца понятнее можно назначить ему псевдоним - AS, этот псевдоним будет отображаться при выводе в заголовке колонки:
 ```
 SELECT games.name, games.genre, devs.name AS developer, devs.country 
 FROM video_games AS games 
