@@ -1,7 +1,7 @@
 ---
 preview: vrev
 title: readme.md
-tags: zsfr`, -----post-locked-by:yemelyanow-ross
+tags: zsfr`
 author: yemelyanow-ross
 date: 2017-12-12 07:40:00
 ---
@@ -24,14 +24,13 @@ const searcher = require('cli-fs-searcher');
 ```
 And them run in the terminal:
 ```
-node yourJSFile --[PARAM]=[ARG]
+node yourJSFile --[PARAMETER]=[ARGUMENT]
 ```
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md] [PlDb] |
-| Github | [plugins/github/README.md] [PlGh] |
-| Google Drive | [plugins/googledrive/README.md] [PlGd] |
-| OneDrive | [plugins/onedrive/README.md] [PlOd] |
-| Medium | [plugins/medium/README.md] [PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md] [PlGa] |
+| PARAMETR | required | description |
+| ------ | ------ | ------ |
+| DIR | required | base lookup directory |
+| PATTERN | optional | regular expression to test file/directory name |
+| MIN-SIZE | optional | minimum file size [B\|K\|M\|G], should be skipped for directories |
+| MAX-SIZE | optional | maximum file size [B\|K\|M\|G], should be skipped for directories |
+| TYPE | optional | [D\|F] D - directory, F - file |
